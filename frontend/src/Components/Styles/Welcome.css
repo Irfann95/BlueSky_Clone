@@ -1,0 +1,52 @@
+.logo {
+    background-color: #E2E5DF;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.LoginAndRegister {
+    background-color: #42dac0;
+    width: 50%;
+    padding: 16px;
+    /* height: 100%; */
+}
+
+.box {
+    display: flex;
+    flex-direction: row;
+    color: #E2E5DF;
+}
+
+.Dolphi {
+    height: auto;
+    width: auto;
+}
+
+.block {
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.span {
+    font-size: 64px;
+    font-weight: 700;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    line-height: 84px;
+    margin-top: 48px;
+    margin-bottom: 48px;
+}
+
+.Inscrivez_vous {
+    margin-bottom: 32px;
+}
+.Inscrivez_vous span {
+    font-size: 32px;
+    font-weight: 700;
+}
