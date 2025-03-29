@@ -1,23 +1,29 @@
 .logo {
-    background-color: #E2E5DF;
+    background-color: #113b62;
     width: 50%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
     height: 100%;
 }
 
 .LoginAndRegister {
-    background-color: #42dac0;
+    background-color: #faf8f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 50%;
-    padding: 16px;
+    /* padding: 16px; */
     /* height: 100%; */
 }
 
 .box {
     display: flex;
     flex-direction: row;
-    color: #E2E5DF;
+    color: #113b62;
+    height: 100%;
 }
 
 .Dolphi {
@@ -26,8 +32,9 @@
 }
 
 .block {
-    padding: 20px;
+    /* padding: 10px; */
     text-align: center;
+    align-items: center;
     display: flex;
     flex-direction: column;
 }
@@ -39,14 +46,68 @@
     display: flex;
     flex-direction: column;
     line-height: 84px;
-    margin-top: 48px;
-    margin-bottom: 48px;
+    /* margin-top: 48px;
+    margin-bottom: 48px; */
+    margin: 10px 240px;
 }
 
 .Inscrivez_vous {
-    margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+}
+.ins {
+    padding: 10px 0px;
 }
 .Inscrivez_vous span {
     font-size: 32px;
     font-weight: 700;
+}
+
+.RegisterClass {
+    justify-content: center;
+}
+
+.RegisterButton {
+    height: 40px;
+    background-color: #113b62;
+    color: #E2E5DF;
+    margin-bottom: 8px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 700;
+    font-size: 15px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 30px;
+    outline-style: none;
+    text-decoration: none;
+    appearance: none; 
+    border: solid #113b62;
+    width: 300px;
+}
+.Conditions  {
+    font-size: 11px;
+    justify-content: center;
+    text-align: center;
+    flex-direction: center;
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+
+.Conditions p {
+    width: 300px;
+}
+
+.LoginClass {
+    margin-top: 5px;
+}
+
+.alreadyaccount {
+    font-weight: 700;
+}
+
+.BlueBird {
+    height: 500px;
+    width: 500px;
 }

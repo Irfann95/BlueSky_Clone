@@ -1,0 +1,107 @@
+.RegisterButton {
+    height: 40px;
+    background-color: #113b62;
+    color: #E2E5DF;
+    margin-bottom: 8px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 700;
+    font-size: 15px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-radius: 30px;
+    outline-style: none;
+    text-decoration: none;
+    appearance: none; 
+    border: solid #113b62;
+    width: 300px;
+}
+
+
+.login-register-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(49, 49, 49, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Registerform {
+    height: 900px;
+    width: 600px;
+    border-radius: 16px;
+    background-color: #faf8f4;
+}
+
+.Loginform {
+    height: 650px;
+    width: 600px;
+    border-radius: 16px;
+    background-color: #faf8f4;
+}
+
+.logoandclose {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+h2 {
+    font-size: 40px
+}
+
+.form-group {
+    padding-bottom: 12px;
+    padding-top: 12px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.form-group input {
+        background-color: #faf8f4;
+        max-width: 190px;
+        height: 40px;
+        padding: 10px;
+        /* text-align: center; */
+        border: 2px solid black;
+        border-radius: 5px;
+        /* box-shadow: 3px 3px 2px rgb(249, 255, 85); */
+}
+
+.form-group .input:focus {
+    color: rgb(0, 255, 255);
+    background-color: #faf8f4;
+    transition: .1s;
+    transition-property: box-shadow;
+  }
+
+.close-modal {
+    padding: 0;
+    margin: 0;
+    height:25px;
+    width:25px;
+    border-radius: 50%;
+    display: flex;
+}
+
+.BlueBirdTwisted {
+    height:75px;
+    width:75px;
+}
+
+.login-btn {
+    position: relative;
+    padding: 10px 22px;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    background-color: #113b62;
+    transition: all 0.2s ease;
+}

@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import '../Styles/Register.css'
+import CloseTwoToneIcon  from '@mui/icons-material/Close';
+import {ReactComponent as BlueBirdTwisted} from '../../public/blue_bird_twisted.svg'
 
-const Login = () => {
+export default function Login() {
+        const [modal, setModal] = useState(false)
+        const toggleModal = () => {
+            setModal(!modal)
+          }
         const navigate = useNavigate()
         const [formData, setFormData] = useState({
             email: '',
@@ -40,40 +47,48 @@ const Login = () => {
             }
     }
   return (
-    <div className="login-container">
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
+    <>
+    <button
+      onClick={toggleModal}
+      className='RegisterButton'
+      color="#841584"
+      >Se connecter</button>
+    {modal && (
+    <div className="login-register-container">
+      <form className='Loginform' onSubmit={handleSubmit}>
+        <div className='logoandclose'>
+          <button onClick={toggleModal} className="close-modal">
+                <CloseTwoToneIcon />
+          </button>
+          <BlueBirdTwisted className="BlueBirdTwisted" />
+          <div></div>
+        </div>
+        <h2>Connectez‑vous</h2>
         <div className="form-group">
-          <label>Email</label>
           <input
             type="email"
             name="email"
-            placeholder="Enter your email"
+            placeholder="Entrez votre email"
             value={formData.email}
             onChange={handleChange}
           />
         </div>
         <div className="form-group">
-          <label>Password</label>
           <input
              value={formData.password}
              type="password"
              name="password"
-             placeholder="Enter your password"
+             placeholder="Entrez votre mot de passe"
              onChange={handleChange}
           />
         </div>
         <button type="submit" className="login-btn">
           Login
         </button>
-        <Link to="/register">
-          <button type="button" className="deja_twittos">
-            Vous n'etes pas inscrit ? 
-          </button>
-        </Link> 
       </form>
+      {error && <p className="error-message">{error}</p>}
     </div>
-  )
-}
-
-export default Login
+  )}
+  </>
+);
+};

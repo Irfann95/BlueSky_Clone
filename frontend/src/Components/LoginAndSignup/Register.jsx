@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
 import { Link, redirect, useNavigate } from 'react-router-dom';
+import '../Styles/Register.css'
+import CloseTwoToneIcon  from '@mui/icons-material/Close';
+import {ReactComponent as BlueBirdTwisted} from '../../public/blue_bird_twisted.svg'
 
-const Register = () => {
+export default function Register() {
+  const [modal, setModal] = useState(false)
+  const toggleModal = () => {
+    setModal(!modal)
+  }
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
     firstname: '',
@@ -33,7 +40,7 @@ const Register = () => {
       if (response.ok) {
         const data = await response.json();
         console.log('Registration successful:', data);
-        navigate('/login');
+        navigate('/');
       } else {
         const errorData = await response.json();
         setError(errorData.message || 'Registration failed');
@@ -46,11 +53,24 @@ const Register = () => {
   };  
 
   return (
-    <div className="register-container">
-      <h2>Sign Up</h2>
-      <form onSubmit={handleSubmit}>
+    <>
+    <button
+      onClick={toggleModal}
+      className='RegisterButton'
+      color="#841584"
+      >Créer un compte</button>
+    {modal && (
+    <div className="login-register-container">
+      <form className='Registerform' onSubmit={handleSubmit}>
+        <div className='logoandclose'>
+            <button onClick={toggleModal} className="close-modal">
+                <CloseTwoToneIcon />
+            </button>
+            <BlueBirdTwisted className="BlueBirdTwisted" />
+            <div></div>
+          </div>
+        <h2>Créer votre compte</h2>
         <div className="form-group">
-          <label>Firstname</label>
           <input
             value={formData.firstname}
             type="text"
@@ -60,7 +80,6 @@ const Register = () => {
           />
         </div>
         <div className="form-group">
-          <label>Lastname</label>
           <input
             value={formData.lastname}
             type="text"
@@ -70,7 +89,6 @@ const Register = () => {
           />
         </div>
         <div className="form-group">
-          <label>Email</label>
           <input
             value={formData.email}
             type="email"
@@ -80,7 +98,6 @@ const Register = () => {
           />
         </div>
         <div className="form-group">
-          <label>Mobile</label>
           <input
             value={formData.telephone} 
             type="tel"
@@ -90,7 +107,6 @@ const Register = () => {
           />
         </div>
         <div className="form-group">
-          <label>BirthDate</label>
           <input
             value={formData.birthDate} 
             type="date"
@@ -99,7 +115,6 @@ const Register = () => {
           />
         </div>
         <div className="form-group">
-          <label>Password</label>
           <input
             value={formData.password}
             type="password"
@@ -109,7 +124,6 @@ const Register = () => {
           />
         </div>
         <div className="form-group">
-          <label>Surname</label>
           <input
             value={formData.surname}
             type="text"
@@ -121,15 +135,10 @@ const Register = () => {
         <button type="submit" className="login-btn">
           Sign Up
         </button>
-        <Link to="/login">
-          <button type="button" className="deja_twittos">
-            Déjà un Twittos?
-          </button>
-        </Link>
       </form>
       {error && <p className="error-message">{error}</p>}
     </div>
+    )}
+    </>
   );
 };
-
-export default Register;
