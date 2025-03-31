@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../Styles/Register.css'
 import CloseTwoToneIcon  from '@mui/icons-material/Close';
-import {ReactComponent as BlueBirdTwisted} from '../../public/blue_bird_twisted.svg'
+import {ReactComponent as BlueBirdTwisted} from '../../public/blue_bird_twist.svg'
 
-export default function Login() {
+const Login = () => {
         const [modal, setModal] = useState(false)
         const toggleModal = () => {
             setModal(!modal)
@@ -47,19 +47,12 @@ export default function Login() {
             }
     }
   return (
-    <>
-    <button
-      onClick={toggleModal}
-      className='RegisterButton'
-      color="#841584"
-      >Se connecter</button>
-    {modal && (
     <div className="login-register-container">
       <form className='Loginform' onSubmit={handleSubmit}>
         <div className='logoandclose'>
-          <button onClick={toggleModal} className="close-modal">
+          <a href='/welcome' onClick={toggleModal} className="close-modal">
                 <CloseTwoToneIcon />
-          </button>
+          </a>
           <BlueBirdTwisted className="BlueBirdTwisted" />
           <div></div>
         </div>
@@ -83,12 +76,11 @@ export default function Login() {
           />
         </div>
         <button type="submit" className="login-btn">
-          Login
+          Se connecter 
         </button>
       </form>
       {error && <p className="error-message">{error}</p>}
     </div>
   )}
-  </>
-);
-};
+
+export default Login;

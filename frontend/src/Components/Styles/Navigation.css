@@ -1,0 +1,31 @@
+.header {
+    align-items: flex-end;
+    position: fixed;
+    height: 100%;
+}
+
+.classheader {
+    position: fixed;
+    height: 100%;
+}
+
+.subclassheader {
+    width: 275px;
+    justify-content: space-between;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.NavAndLogo {
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+
+.logo2 h1 {
+    align-items: center;
+}
+
+.BlueBirdTwisted2 {
+    width: 100px;
+    height: 100px;
+ }

@@ -4,14 +4,14 @@ import { ProtectedRoute } from "./ProtectedRoutes";
 import  Login  from "../Components/LoginAndSignup/Login";
 import  Register  from "../Components/LoginAndSignup/Register";
 import  Welcome  from "../Components/Welcome";
-import  Home  from "../Components/Authentification/Home";
+import  Home  from "../Components/Home/Home";
 
 const Routes = () => {
   const { token } = useAuth();
 
   const routesForPublic = [
     {
-      path: "/",
+      path: "/welcome",
       element: <Welcome/>,
     },
     {

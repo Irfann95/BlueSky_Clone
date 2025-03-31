@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Login from './LoginAndSignup/Login'
 import Register from './LoginAndSignup/Register'
@@ -6,6 +6,10 @@ import BlueBird from '../public/blue_bird.png'
 import './Styles/Welcome.css'
 
 const Welcome = () => {
+  const [modal, setModal] = useState(false)
+        const toggleModal = () => {
+            setModal(!modal)
+          }
   return (
     <div className='box'>  
       <div className='logo'>
@@ -21,7 +25,11 @@ const Welcome = () => {
             <span>Inscrivez-vous</span>
           </div>
           <div className='RegisterClass'>
-          <Register/>
+          <a  href='/register'
+              onClick={toggleModal}
+              className='RegisterButton'
+              color="#841584"
+            >Créer un compte</a>
           </div>
           <div className='Conditions'>
             <p>En vous inscrivant, vous acceptez les Conditions d'utilisation et la Politique de confidentialité, notamment l'Utilisation des cookies.</p>
@@ -31,7 +39,11 @@ const Welcome = () => {
             <div className='alreadyaccount'>
               <span>Vous avez déjà un compte ?</span>
             </div>
-            <Login/>
+            <a  href='/login'
+              onClick={toggleModal}
+              className='RegisterButton'
+              color="#841584"
+            >Connectez-vous</a>
         </div>
         </div>
       </div>

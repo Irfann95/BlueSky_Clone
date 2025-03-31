@@ -37,6 +37,7 @@
     align-items: center;
     display: flex;
     flex-direction: column;
+    max-width: 710px;
 }
 
 .span {
@@ -68,7 +69,6 @@
 }
 
 .RegisterButton {
-    height: 40px;
     background-color: #113b62;
     color: #E2E5DF;
     margin-bottom: 8px;
@@ -83,7 +83,6 @@
     text-decoration: none;
     appearance: none; 
     border: solid #113b62;
-    width: 300px;
 }
 .Conditions  {
     font-size: 11px;
@@ -101,6 +100,8 @@
 
 .LoginClass {
     margin-top: 5px;
+    /* display: flex;
+    flex-direction: column; */
 }
 
 .alreadyaccount {

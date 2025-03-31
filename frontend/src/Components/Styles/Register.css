@@ -36,6 +36,10 @@
     width: 600px;
     border-radius: 16px;
     background-color: #faf8f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .Loginform {
@@ -43,17 +47,19 @@
     width: 600px;
     border-radius: 16px;
     background-color: #faf8f4;
+    text-align: center;
 }
 
 .logoandclose {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 10px 20px;
+    width: 95%;
 }
 
 h2 {
-    font-size: 40px
+    font-size: 40px;
+    text-align: center;
 }
 
 .form-group {
@@ -61,6 +67,9 @@ h2 {
     padding-top: 12px;
     padding-left: 0px;
     padding-right: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .form-group input {
@@ -104,4 +113,5 @@ h2 {
     cursor: pointer;
     background-color: #113b62;
     transition: all 0.2s ease;
+    width: 100px;
 }
