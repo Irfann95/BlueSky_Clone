@@ -37,7 +37,7 @@ const Header = () => {
                         <div className='profile'>
                             <div>
                                 <button className='profile2'>
-                                    <div>Quoi de neuf <p>{user.firstname}</p> ?</div>
+                                    <div>Quoi de neuf {user.firstname} ?</div>
                                 </button>
                             </div>
                         </div>
