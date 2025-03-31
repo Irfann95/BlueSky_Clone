@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Navigation from '../Navigation/Navigation';
+import Header from '../Header/Header';
 
 const Home = () => {
   const [user, setUser] = useState(null);
@@ -23,7 +23,7 @@ const Home = () => {
       <p><strong>Téléphone :</strong> {user.telephone}</p>
       <p><strong>Nom d'utilisateur :</strong> {user.surname}</p>
       <p><strong>Date de naissance :</strong> {new Date(user.birthDate).toLocaleDateString()}</p> */}
-      <Navigation/>
+      <Header/>
     </div>
   );
 };
