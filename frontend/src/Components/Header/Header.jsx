@@ -1,4 +1,6 @@
 import '../Styles/Header.css'
+import { useAuth } from '../../Provider/authProvider';
+import { useNavigate } from 'react-router-dom';
 import {ReactComponent as BlueBirdTwisted} from '../../public/blue_bird_twist.svg'
 import React, { useEffect, useState } from 'react'; 
 import HomeIcon from '@mui/icons-material/Home';
@@ -7,6 +9,16 @@ import SearchIcon from '@mui/icons-material/Search';
 import LogoutIcon from '@mui/icons-material/Logout';
 
 const Header = () => {
+    const [modal, setModal] = useState(false)
+            const toggleModal = () => {
+                setModal(!modal)
+              }
+    const navigate = useNavigate();
+    const handleLogout = () => {
+            // setToken();
+            navigate("/logout");
+            };
+    const { setToken } = useAuth();
     const [user, setUser] = useState(null);
     const rawUserId = localStorage.getItem("userID");
     const userId = rawUserId.replace(/^"|"$/g, '');
@@ -31,7 +43,7 @@ const Header = () => {
                                 <a href='/home'><div><div className='HomeIcon'><HomeIcon style={{fontSize: "60px"}}/></div><div className='text'>Accueil</div></div></a>
                                 <a href='/explorer'><div><div className='SearchIcon'><SearchIcon style={{fontSize: "60px"}} /></div><div className='text'>Profil</div></div></a>
                                 <a href='/profil'><div><div className='PersonIcon'><PersonIcon style={{fontSize: "60px"}} /></div><div className='text'>Explorer</div></div></a> 
-                                <button className='logout'><div><div className='LogoutIcon'><LogoutIcon style={{fontSize: "60px"}} /></div><div className='text'>Logout</div></div></button> 
+                                <button className='logout' onClick={handleLogout}><div><div className='LogoutIcon'><LogoutIcon style={{fontSize: "60px"}} /></div><div className='text'>Logout</div></div></button> 
                             </nav>
                         </div>
                         <div className='profile'>

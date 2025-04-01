@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../Provider/authProvider';
 import '../Styles/Register.css'
 import CloseTwoToneIcon  from '@mui/icons-material/Close';
 import {ReactComponent as BlueBirdTwisted} from '../../public/blue_bird_twist.svg'
 
 const Login = () => {
+        const { setToken } = useAuth();
         const [modal, setModal] = useState(false)
         const toggleModal = () => {
             setModal(!modal)
@@ -33,6 +35,7 @@ const Login = () => {
               if (response.ok) {
                 const data = await response.json();
                 console.log('Login successful:', data);
+                setToken(data.token);
                 const LS = localStorage.setItem("userID", JSON.stringify(data.userId));
                 console.log(LS);
                 navigate("/home");
@@ -71,6 +74,7 @@ const Login = () => {
              value={formData.password}
              type="password"
              name="password"
+             autoComplete='on'
              placeholder="Entrez votre mot de passe"
              onChange={handleChange}
           />

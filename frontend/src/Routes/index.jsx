@@ -5,6 +5,7 @@ import  Login  from "../Components/LoginAndSignup/Login";
 import  Register  from "../Components/LoginAndSignup/Register";
 import  Welcome  from "../Components/Welcome";
 import  Home  from "../Components/Home/Home";
+import Logout from "../Components/Confirmation/Logout";
 
 const Routes = () => {
   const { token } = useAuth();
@@ -39,13 +40,17 @@ const Routes = () => {
         },
         {
           path: "/logout",
-          element: <div>Logout</div>,
+          element: <Logout/>,
         },
       ],
     },
   ];
 
   const routesForNotAuthenticatedOnly = [
+    {
+      path: "/welcome",
+      element: <Welcome/>,
+    },
     {
       path: "/register",
       element: <Register/>,
