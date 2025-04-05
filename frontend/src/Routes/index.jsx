@@ -5,6 +5,7 @@ import  Login  from "../Components/LoginAndSignup/Login";
 import  Register  from "../Components/LoginAndSignup/Register";
 import  Welcome  from "../Components/Welcome";
 import  Home  from "../Components/Home/Home";
+import Main from "../Components/Main/Main";
 import Logout from "../Components/Confirmation/Logout";
 
 const Routes = () => {
@@ -35,8 +36,8 @@ const Routes = () => {
           element: <Home/>,
         },
         {
-          path: "/profile",
-          element: <div>User Profile</div>,
+          path: "/home",
+          element: <Main/>,
         },
         {
           path: "/logout",

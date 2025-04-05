@@ -31,12 +31,12 @@ const Header = () => {
     
       if (!user) return <p>Chargement...</p>;
     return (
-        <header>
+        <header className='header'>
             <div className="classheader">
                 <div className="subclassheader">
                     <div className='NavAndLogo'>
                         <div className='logo2'>
-                            <h1><BlueBirdTwisted className="BlueBirdTwisted2"/></h1>
+                            <h1><BlueBirdTwisted className="BlueBirdTwisted2"/> <p>BlueBird</p></h1>
                         </div>
                         <div className='navigation'>
                             <nav className='navdiv'>

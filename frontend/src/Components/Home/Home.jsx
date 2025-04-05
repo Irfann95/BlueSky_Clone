@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import '../Styles/Home.css'
 import Header from '../Header/Header';
+import Main from '../Main/Main';
 
 const Home = () => {
   const [user, setUser] = useState(null);
@@ -15,7 +17,7 @@ const Home = () => {
   if (!user) return <p>Chargement...</p>;
 
   return (
-    <div>
+    <div className='HomeClass'>
       {/* <h2>Détails de l'utilisateur</h2>
       <p><strong>Prénom :</strong> {user.firstname}</p>
       <p><strong>Nom :</strong> {user.lastname}</p>
@@ -24,6 +26,7 @@ const Home = () => {
       <p><strong>Nom d'utilisateur :</strong> {user.surname}</p>
       <p><strong>Date de naissance :</strong> {new Date(user.birthDate).toLocaleDateString()}</p> */}
       <Header/>
+      <Main/>
     </div>
   );
 };
