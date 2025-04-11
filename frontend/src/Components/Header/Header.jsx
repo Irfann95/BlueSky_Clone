@@ -41,8 +41,8 @@ const Header = () => {
                         <div className='navigation'>
                             <nav className='navdiv'>
                                 <a href='/home'><div><div className='HomeIcon'><HomeIcon style={{fontSize: "60px"}}/></div><div className='text'>Accueil</div></div></a>
-                                <a href='/explorer'><div><div className='SearchIcon'><SearchIcon style={{fontSize: "60px"}} /></div><div className='text'>Profil</div></div></a>
-                                <a href='/profil'><div><div className='PersonIcon'><PersonIcon style={{fontSize: "60px"}} /></div><div className='text'>Explorer</div></div></a> 
+                                <a href='/explorer'><div><div className='SearchIcon'><SearchIcon style={{fontSize: "60px"}} /></div><div className='text'>Explorer</div></div></a>
+                                <a href='/profil'><div><div className='PersonIcon'><PersonIcon style={{fontSize: "60px"}} /></div><div className='text'>Profil</div></div></a> 
                                 <button className='logout' onClick={handleLogout}><div><div className='LogoutIcon'><LogoutIcon style={{fontSize: "60px"}} /></div><div className='text'>Logout</div></div></button> 
                             </nav>
                         </div>

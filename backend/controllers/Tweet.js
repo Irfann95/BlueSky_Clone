@@ -40,7 +40,7 @@ exports.getOneTweet = (req, res) => {
 exports.getAllTweet = (req, res) => {
     Tweet.find()
     .populate('user', 'surname')
-    .then(tweets => res.status(200).json(tweets))
+    .then(tweets => res.status(200).json(tweets.toReversed()))
     .catch(error => res.status(400).json({ error }));
 };
 

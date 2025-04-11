@@ -1,4 +1,5 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { useEffect, useState } from "react"
 import { useAuth } from "../Provider/authProvider";
 import { ProtectedRoute } from "./ProtectedRoutes";
 import  Login  from "../Components/LoginAndSignup/Login";
@@ -7,6 +8,10 @@ import  Welcome  from "../Components/Welcome";
 import  Home  from "../Components/Home/Home";
 import Main from "../Components/Main/Main";
 import Logout from "../Components/Confirmation/Logout";
+import Explorer from "../Components/Explorer/Explorer";
+import AllTweets from "../Components/Tweets/AllTweets";
+import Onetweet from "../Components/Tweets/OneTweets";
+
 
 const Routes = () => {
   const { token } = useAuth();
@@ -38,6 +43,14 @@ const Routes = () => {
         {
           path: "/home",
           element: <Main/>,
+        },
+        {
+          path: "/explorer",
+          element: <Explorer/>,
+        },
+        {
+          path: "/status/:id",
+          element: <Onetweet/>,
         },
         {
           path: "/logout",
