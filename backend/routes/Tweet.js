@@ -8,7 +8,7 @@ router.post('/', auth, tweetCtrl.createTweet);
 router.get('/search',auth, tweetCtrl.getbyTweet);
 router.get('/', auth,tweetCtrl.getAllTweet);
 router.get('/:id', auth, tweetCtrl.getOneTweet);
-// router.get('/:userid', auth, tweetCtrl.getAllTweetFromOneUser);
+router.get('/user/:user', auth, tweetCtrl.getAllTweetFromOneUser);
 router.patch("/:id", auth, tweetCtrl.modifyTweet);
 router.delete('/:id', auth, tweetCtrl.deleteTweet);
 module.exports = router;

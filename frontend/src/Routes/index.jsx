@@ -11,6 +11,8 @@ import Logout from "../Components/Confirmation/Logout";
 import Explorer from "../Components/Explorer/Explorer";
 import AllTweets from "../Components/Tweets/AllTweets";
 import Onetweet from "../Components/Tweets/OneTweets";
+import Profile from "../Components/Profile/Profile"
+import MyProfile from "../Components/Profile/MyProfile"
 
 
 const Routes = () => {
@@ -51,6 +53,14 @@ const Routes = () => {
         {
           path: "/status/:id",
           element: <Onetweet/>,
+        },
+        {
+          path: "/profile/:id",
+          element: <Profile/>,
+        },
+        {
+          path: "/myprofil/",
+          element: <MyProfile/>,
         },
         {
           path: "/logout",

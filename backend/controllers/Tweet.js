@@ -1,4 +1,5 @@
 const Tweet = require('../model/Tweet');
+const User = require('../model/User');
 const mongoose = require('mongoose');
 
 exports.createTweet = (req, res) => {
@@ -24,7 +25,9 @@ exports.createTweet = (req, res) => {
 exports.getOneTweet = (req, res) => {
     Tweet.findOne({
         _id: req.params.id
-      }).then(
+      })
+      .populate('user', 'surname')
+      .then(
         (tweet) => {
           res.status(200).json(tweet);
         }
@@ -36,9 +39,25 @@ exports.getOneTweet = (req, res) => {
           }
         );
       };
+      
+exports.getAllTweetFromOneUser = (req, res) => {
+    Tweet.find({user : req.params.user})
+    .populate('user', 'surname')
+    .then(tweets => res.status(200).json(tweets.toReversed()))
+    .catch(error => res.status(400).json({ error }));
+};
 
 exports.getAllTweet = (req, res) => {
-    Tweet.find()
+    let query = {};
+    const searchData = req.query.search;
+    if (searchData) {
+        query= {
+            $or: [
+                {description: {$regex: searchData, $options:"i"}},
+            ]
+        }
+    }
+    Tweet.find(query)
     .populate('user', 'surname')
     .then(tweets => res.status(200).json(tweets.toReversed()))
     .catch(error => res.status(400).json({ error }));

@@ -31,7 +31,8 @@ exports.createUser = (req, res) => {
 exports.getOneUser = (req, res) => {
   User.findOne({
     _id: req.params.id
-  }).then(
+  })
+  .then(
     (user) => {
       res.status(200).json(user);
     }

@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react"
-import '../Styles/AllTweets.css'
-const AllTweets = () => { 
+import Header from "../Header/Header"
+import '../Styles/Profile.css'
+
+const MyProfile = () => {
     const rawUserId = localStorage.getItem("userID");
     const userId = rawUserId.replace(/^"|"$/g, "");
     const rawToken = localStorage.getItem("token");
     const [alltweets, setAlltweets] = useState([])
+    const [user, setUser] = useState(null);
     const fetchTweet = async () => {
         try {
-          const response = await fetch("http://localhost:3000/api/tweets", {
+          const response = await fetch(`http://localhost:3000/api/tweets/user/${userId}`, {
             method: "GET",
             headers: {
               "Content-Type": "application/json",
@@ -28,21 +31,30 @@ const AllTweets = () => {
       }, []);
       function handleClick(id)  {
         localStorage.setItem("tweetID", JSON.stringify(id));
-      }; 
+      };    
+    useEffect(() => {
+            fetch(`http://localhost:3000/api/auth/${userId}`)
+            .then((response) => response.json())
+            .then((data) => setUser(data))
+            .catch((error) => console.error('Erreur lors de la récupération :', error));
+          }, [userId]);
     return (
-        <div className="subtweets">
+        <div className="Profile">
+            <Header/>
+            <div className="subtweets"> 
+            <h1>{user?.surname}</h1>
         {alltweets.map((item, index) => (
             <a onClick={() => handleClick(item._id)} href={`/status/${item._id}`} className="article" key={index}>
               <div className="pp"></div>
               <div className="tweetdescription">
-                <h1>{item.user.surname.replace(/^"|"$/g, "")}</h1>
                 <p className="description">{item.description.replace(/^"|"$/g, "")}</p>
                 <p className="created_at">{item.createdAt}</p>
               </div>
             </a>
         ))}
-        </div>          
+        </div>
+        </div>
     )
 }
 
-export default AllTweets;
+export default MyProfile
