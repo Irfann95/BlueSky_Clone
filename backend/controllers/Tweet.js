@@ -69,6 +69,7 @@ exports.getbyTweet = (req, res) => {
       return res.status(400).json({ error: 'Query parameter "q" is required' });
   }
   Tweet.find({ description: { $regex: TweetSearchQuery, $options: 'i' } })
+    .populate('user', 'surname')
       .then(tweets => {
           if (tweets.length === 0) {
               return res.status(404).json({ error: 'No tweets found' });
